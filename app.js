@@ -14,31 +14,37 @@ let posts = [];
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(express.static("public"));
 
-app.get("/", function(req,res){
+app.get("/", function(req, res) {
   res.render("home", {
     startingContent: homeStartingContent,
-    posts:posts
+    posts: posts
   });
 
 });
 
-app.get("/about", function(req,res){
-  res.render("about", {aboutContent: aboutContent}); //js objects can be the same name as best practice
+app.get("/about", function(req, res) {
+  res.render("about", {
+    aboutContent: aboutContent
+  }); //js objects can be the same name as best practice
 });
 
-app.get("/contact", function(req,res){
-  res.render("contact", {contactContent: contactContent});
+app.get("/contact", function(req, res) {
+  res.render("contact", {
+    contactContent: contactContent
+  });
 });
 
-app.get("/compose", function(req,res){
+app.get("/compose", function(req, res) {
   res.render("compose");
 });
 
-
-app.post("/compose", function(req,res){
+//to add the new post into the array
+app.post("/compose", function(req, res) {
   const post = {
     title: req.body.postTitle,
     body: req.body.postBody
@@ -47,6 +53,17 @@ app.post("/compose", function(req,res){
   res.redirect("/");
 });
 
+//tap in to dynamic parameter
+app.get("/posts/:postName", function(req, res) {
+  const requestedTitle = req.params.postName;
+  if (requestedTitle === requestedTitle) {
+
+    console.log("Match Found");
+  } else {
+    console.log(requestedTitle);
+  }
+
+})
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
