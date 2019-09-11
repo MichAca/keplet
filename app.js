@@ -48,23 +48,26 @@ app.get("/compose", function(req, res) {
 app.post("/compose", function(req, res) {
   const post = {
     title: req.body.postTitle,
-    body: req.body.postBody
+    content: req.body.postBody
   };
   posts.push(post);
+
   res.redirect("/");
 });
 
 //tap in to dynamic parameter in url
-//converted to lower case using lodash
+//converted to lower case using lodash library
 app.get("/posts/:postName", function(req, res) {
   const requestedTitle = _.lowerCase(req.params.postName);
 
   posts.forEach(function(post) {
       const storedTitle = _.lowerCase(post.title);
       if (storedTitle === requestedTitle) {
-        console.log("Match Found");
-      } else {
-        console.log("Not a match");
+        res.render("post", {
+          title: post.title,
+          content: post.content
+        });
+      //  console.log("Match Found");
       }
 
   });
