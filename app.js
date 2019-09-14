@@ -22,6 +22,14 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res) {
   res.render("home", {
+    //startingContent: homeStartingContent,
+
+  });
+
+});
+
+app.get("/blog", function(req, res) {
+  res.render("blog", {
     startingContent: homeStartingContent,
     posts: posts
   });
@@ -52,7 +60,7 @@ app.post("/compose", function(req, res) {
   };
   posts.push(post);
 
-  res.redirect("/");
+  res.redirect("/blog");
 });
 
 //tap in to dynamic parameter in url
