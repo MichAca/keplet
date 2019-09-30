@@ -6,7 +6,7 @@ const ejs = require("ejs");
 const _ = require("lodash");
 
 const homeStartingContent = "Hello. I'm Keplet!";
-const aboutContent = "Keplet has been my journal for years and this time and giving her (I always she's a she) a total make over. This blog is a mixture of my interest in both writing and web design and very excited of what it will become in the future. Thank you for droppin by and enjoy my random thoughts and two-cents in life.";
+const aboutContent = " Writing has always been my greatest passion. It's a stress reliever like no other. Thank you for droppin by and enjoy my random thoughts and two-cents in life.";
 const contactContent = "Ping me on my social media!";
 
 const app = express();

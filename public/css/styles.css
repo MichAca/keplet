@@ -22,7 +22,8 @@
 }
 
 home, .view {
-  background-image: url('https://www.coffscoast.com.au/wp-content/uploads/2017/01/Coffs-Harbour-Jetty-at-Dawn.jpg');
+  /* background-image: url('https://www.coffscoast.com.au/wp-content/uploads/2017/01/Coffs-Harbour-Jetty-at-Dawn.jpg'); */
+  background-image: url("/images/bg.jpeg");
   background-size: cover;
   background-position: center center;
   height: 500px;
@@ -33,6 +34,7 @@ home, .view {
   color: #00334e;
   letter-spacing: 8px;
 }
+
 
 .footer-padding {
   padding-bottom: 60px;
@@ -58,4 +60,13 @@ home, .view {
 h5, .h5 {
   letter-spacing: 3px;
   color: white;
+  font-size: large;
+}
+
+.text-center {
+  padding-top: 70px;
+}
+
+.h3, h3 {
+  color: #00334e;
 }
